@@ -8,18 +8,19 @@ class Plate extends DisplayableWidget {
   final String displayText;
   final double borderRadius; // Border radius property
 
-  Plate({
+  const Plate({super.key, 
     required this.imageAssetPath,
     required this.displayText,
     this.borderRadius = 10.0, // Default border radius
   });
 
   // Getter to return the height of the Plate
+  @override
   double get height => 97.0; // Total height of the Plate widget
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       width: 164,
       height: height, // Use the height defined above
       child: Stack(
@@ -44,8 +45,8 @@ class Plate extends DisplayableWidget {
               borderRadius: BorderRadius.only(
                 bottomLeft: Radius.circular(borderRadius),
                 bottomRight: Radius.circular(borderRadius),
-                topLeft: Radius.circular(20),
-                topRight: Radius.circular(20),
+                topLeft: const Radius.circular(20),
+                topRight: const Radius.circular(20),
               ),
               child: BackdropFilter(
                 filter: ImageFilter.blur(sigmaX: 5.0, sigmaY: 5.0),
@@ -58,7 +59,7 @@ class Plate extends DisplayableWidget {
                   child: Center(
                     child: Text(
                       displayText,
-                      style: TextStyle(
+                      style: const TextStyle(
                         color: Colors.white,
                         fontSize: 20,
                         fontFamily: 'Hiragino Maru Gothic Pro',

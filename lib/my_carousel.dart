@@ -7,7 +7,7 @@ class MyCarousel extends StatefulWidget {
   final List<String> imgList;
   final double height;
 
-  const MyCarousel({Key? key, required this.imgList, this.height = 300}) : super(key: key);
+  const MyCarousel({super.key, required this.imgList, this.height = 300});
 
   @override
   _MyCarouselState createState() => _MyCarouselState();
@@ -21,7 +21,7 @@ class _MyCarouselState extends State<MyCarousel> {
   @override
   void initState() {
     super.initState();
-    _timer = Timer.periodic(Duration(seconds: 2), (Timer timer) {
+    _timer = Timer.periodic(const Duration(seconds: 2), (Timer timer) {
       if (_currentIndex < widget.imgList.length - 1) {
         _currentIndex++;
       } else {
@@ -30,7 +30,7 @@ class _MyCarouselState extends State<MyCarousel> {
 
       _pageController.animateToPage(
         _currentIndex,
-        duration: Duration(milliseconds: 400),
+        duration: const Duration(milliseconds: 400),
         curve: Curves.easeInOut,
       );
     });
@@ -61,11 +61,11 @@ class _MyCarouselState extends State<MyCarousel> {
             },
           ),
         ),
-        SizedBox(height: 20), // Space before the indicator
+        const SizedBox(height: 20), // Space before the indicator
         SmoothPageIndicator(
           controller: _pageController,
           count: widget.imgList.length,
-          effect: WormEffect(),
+          effect: const WormEffect(),
         ),
       ],
     );

@@ -5,7 +5,7 @@ class CarouselOfPlates extends StatelessWidget {
   final List<DisplayableWidget> plates; // Changed to List<DisplayableWidget>
   final double gap;
 
-  CarouselOfPlates({
+  const CarouselOfPlates({super.key, 
     required this.plates,
     this.gap = 10.0, // Default gap size
   });
@@ -20,7 +20,7 @@ class CarouselOfPlates extends StatelessWidget {
           return (plateHeight > prev) ? plateHeight : prev;
         });
 
-        return Container(
+        return SizedBox(
           height: tallestPlateHeight, // Height adjusts to the tallest Plate
           child: ListView.separated(
             padding: EdgeInsets.only(left: 0.0, right: gap), // Adjust padding for first Plate

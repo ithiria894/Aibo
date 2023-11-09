@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'dart:ui';
 import 'DisplayableWidget.dart'; // Import the DisplayableWidget interface
 
 class ComplexPlate extends DisplayableWidget {
@@ -7,18 +6,19 @@ class ComplexPlate extends DisplayableWidget {
   final String displayText;
   final double borderRadius; // Border radius property
 
-  ComplexPlate({
+  const ComplexPlate({super.key, 
     required this.imageAssetPath,
     required this.displayText,
-    this.borderRadius = 10.0, // Default border radius
+    this.borderRadius = 5.0, // Default border radius
   });
 
   // Getter to return the height of the ComplexPlate
+  @override
   double get height => 180.0; // Total height of the ComplexPlate widget
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       width: 164,
       height: height,
       child: Stack(
@@ -29,7 +29,7 @@ class ComplexPlate extends DisplayableWidget {
             decoration: ShapeDecoration(
               color: Colors.white,
               shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(5),
+                borderRadius: BorderRadius.circular(borderRadius),
               ),
             ),
           ),
@@ -58,8 +58,13 @@ class ComplexPlate extends DisplayableWidget {
                       Container(
                         width: 156,
                         height: 21, // Height of the overlay
+                        
                         decoration: BoxDecoration(
-                          color: Colors.black.withOpacity(0.7), // Semi-transparent black overlay
+                          color: const Color.fromARGB(255, 255, 255, 255).withOpacity(0.7), // Semi-transparent black overlay
+                          borderRadius: const BorderRadius.only(
+                            topLeft: Radius.circular(20),
+                            topRight: Radius.circular(20),
+                          ),
                         ),
                         alignment: Alignment.center,
                         child: Text(
@@ -75,7 +80,7 @@ class ComplexPlate extends DisplayableWidget {
                     ],
                   ),
 
-                  SizedBox(height: 8), // Spacer
+                  const SizedBox(height: 8), // Spacer
 
                   // Row of three small containers
                   Row(
@@ -95,7 +100,7 @@ class ComplexPlate extends DisplayableWidget {
                     ),
                   ),
 
-                  SizedBox(height: 8), // Spacer
+                  const SizedBox(height: 8), // Spacer
 
                   // Row of 6 circle img
                   Row(
@@ -107,7 +112,7 @@ class ComplexPlate extends DisplayableWidget {
                         child: Container(
                           width: 20.0, // Adjusted width of the circle
                           height: 20.0, // Adjusted height of the circle
-                          decoration: BoxDecoration(
+                          decoration: const BoxDecoration(
                             shape: BoxShape.circle, // making the container circular
                             image: DecorationImage(
                               fit: BoxFit.cover, // ensures the image covers the circle

@@ -6,7 +6,7 @@ class CircleCarousel extends StatelessWidget {
   final double size; // Size of each image
   final double gap; // Gap between images
 
-  CircleCarousel({
+  const CircleCarousel({super.key, 
     required this.imgPaths,
     this.size = 20,
     this.gap = 0,

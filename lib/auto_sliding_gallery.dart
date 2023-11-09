@@ -3,8 +3,7 @@ import 'dart:async';
 
 class AutoSlidingGallery extends StatefulWidget {
   final List<String> imageUrls; // List of image URLs
-  const AutoSlidingGallery({Key? key, required this.imageUrls})
-      : super(key: key);
+  const AutoSlidingGallery({super.key, required this.imageUrls});
 
   @override
   _AutoSlidingGalleryState createState() => _AutoSlidingGalleryState();
@@ -20,7 +19,7 @@ class _AutoSlidingGalleryState extends State<AutoSlidingGallery> {
     _pageController = PageController(initialPage: 0);
 
     // Set up the auto-slide using a timer
-    _timer = Timer.periodic(Duration(seconds: 2), (Timer timer) {
+    _timer = Timer.periodic(const Duration(seconds: 2), (Timer timer) {
       if (_pageController.hasClients) {
         int nextPage = (_pageController.page?.round() ?? 0) + 1;
         if (nextPage == widget.imageUrls.length) {
@@ -28,7 +27,7 @@ class _AutoSlidingGalleryState extends State<AutoSlidingGallery> {
         }
         _pageController.animateToPage(
           nextPage,
-          duration: Duration(milliseconds: 400), //控制从一张图片滑动到下一张图片所需的时间。
+          duration: const Duration(milliseconds: 400), //控制从一张图片滑动到下一张图片所需的时间。
           curve: Curves.easeInOut,
         );
       }
@@ -44,7 +43,7 @@ class _AutoSlidingGalleryState extends State<AutoSlidingGallery> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 200, // Set the height of the gallery
       child: PageView.builder(
         controller: _pageController,

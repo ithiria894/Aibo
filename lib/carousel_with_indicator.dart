@@ -34,14 +34,14 @@ class CarouselWithIndicator extends StatefulWidget {
   final EdgeInsetsGeometry itemMargin;
 
   const CarouselWithIndicator({
-    Key? key,
+    super.key,
     required this.imgList,
     required this.options,
     this.indicatorSize = 12.0,
     this.activeIndicatorColor = Colors.blue,
     this.inactiveIndicatorColor = Colors.grey,
     this.itemMargin = const EdgeInsets.symmetric(horizontal: 5.0),
-  }) : super(key: key);
+  });
 
   @override
   State<StatefulWidget> createState() => _CarouselWithIndicatorState();

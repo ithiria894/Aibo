@@ -6,10 +6,10 @@ class PhotoGallery extends StatelessWidget {
   final EdgeInsetsGeometry margin;
 
   const PhotoGallery({
-    Key? key,
+    super.key,
     required this.imgList,
     this.margin = const EdgeInsets.symmetric(horizontal: 5.0),
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -26,9 +26,9 @@ class PhotoGallery extends StatelessWidget {
         enlargeCenterPage: false,
         viewportFraction: 0.3, // Adjust as needed
         aspectRatio: 2.0,
-        autoPlayInterval: Duration(seconds: 5), // Slower movement
+        autoPlayInterval: const Duration(seconds: 5), // Slower movement
         autoPlayAnimationDuration:
-            Duration(milliseconds: 5000), // Smooth transition
+            const Duration(milliseconds: 5000), // Smooth transition
         autoPlayCurve: Curves.linear, // Steady and linear animation
         enableInfiniteScroll: true, // Enable infinite scroll
       ),

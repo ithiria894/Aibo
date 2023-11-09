@@ -6,7 +6,6 @@ import 'photo_gallery.dart'; // Ensure this custom widget is correctly implement
 import 'plate.dart'; // Ensure this custom widget is correctly implemented
 import 'complex_plate.dart'; // Ensure this custom widget is correctly implemented
 import 'carousel_of_plates.dart'; // Ensure this custom widget is correctly implemented
-import 'circle_carousel.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -61,7 +60,7 @@ void main() {
               numberText: '02',
             ),
             const SizedBox(height: 20),
-            CarouselOfPlates(
+            const CarouselOfPlates(
               plates: [
                 Plate(
                     imageAssetPath: 'lib/banners/Rectangle 3.png',
@@ -80,7 +79,26 @@ void main() {
               numberText: '03',
             ),
             const SizedBox(height: 20),
-            CarouselOfPlates(
+            const CarouselOfPlates(
+              plates: [
+                ComplexPlate(
+                    imageAssetPath: 'assets/img/players/DSC09416.jpg',
+                    displayText: 'Player 1'),
+                ComplexPlate(
+                    imageAssetPath: 'assets/img/players/images.jpg',
+                    displayText: 'Player 2'),
+                ComplexPlate(
+                    imageAssetPath: 'assets/img/players/0-3.jpg',
+                    displayText: 'Player 3'),
+              ],
+            ),
+            const SizedBox(height: 20),
+            const TitleWidget(
+              titleText: '在 線 拍 檔',
+              numberText: '04',
+            ),
+            const SizedBox(height: 20),
+            const CarouselOfPlates(
               plates: [
                 ComplexPlate(
                     imageAssetPath: 'lib/banners/Rectangle 3.png',
@@ -93,16 +111,50 @@ void main() {
                     displayText: 'Plate 3'),
               ],
             ),
-            // CircleCarousel(
-            //   imgPaths: [
-            //     'lib/banners/Rectangle 3.png',
-            //     'lib/banners/Rectangle 4.png',
-            //     // Add more image URLs here
-            //   ],
-            //   size: 10.0, // Optional, size of each image
-            //   gap: 0.0, // Optional, gap between images
-            // ),
-
+            const SizedBox(height: 20),
+            const TitleWidget(
+              titleText: '新 到 拍 檔',
+              numberText: '05',
+            ),
+            const SizedBox(height: 20),
+            const CarouselOfPlates(
+              plates: [
+                ComplexPlate(
+                    imageAssetPath: 'lib/banners/Rectangle 3.png',
+                    displayText: 'Plate 1'),
+                ComplexPlate(
+                    imageAssetPath: 'lib/banners/Rectangle 4.png',
+                    displayText: 'Plate 2'),
+                ComplexPlate(
+                    imageAssetPath: 'lib/banners/Rectangle 5.png',
+                    displayText: 'Plate 3'),
+              ],
+            ),
+            const SizedBox(height: 20),
+            const TitleWidget(
+              titleText: '占 卜 達 人',
+              numberText: '06',
+            ),
+            const SizedBox(height: 20),
+            const CarouselOfPlates(
+              plates: [
+                ComplexPlate(
+                    imageAssetPath: 'lib/banners/Rectangle 3.png',
+                    displayText: 'Plate 1'),
+                ComplexPlate(
+                    imageAssetPath: 'lib/banners/Rectangle 4.png',
+                    displayText: 'Plate 2'),
+                ComplexPlate(
+                    imageAssetPath: 'lib/banners/Rectangle 5.png',
+                    displayText: 'Plate 3'),
+              ],
+            ),
+                        const SizedBox(height: 20),
+            const TitleWidget(
+              titleText: '一 般 聊 天',
+              numberText: '07',
+            ),
+            const SizedBox(height: 20),
           ],
         ),
       ),

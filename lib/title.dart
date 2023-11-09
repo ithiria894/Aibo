@@ -10,7 +10,7 @@ class TitleWidget extends StatelessWidget {
   final double numberFontSize;
 
   const TitleWidget({
-    Key? key,
+    super.key,
     required this.titleText,
     required this.numberText,
     this.backgroundColor = const Color(0xFF373535),
@@ -18,15 +18,15 @@ class TitleWidget extends StatelessWidget {
     this.numberColor = const Color(0xFF373535),
     this.titleFontSize = 20,
     this.numberFontSize = 15,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 8), // Padding on both sides
+      padding: const EdgeInsets.symmetric(horizontal: 8), // Padding on both sides
       decoration: ShapeDecoration(
         color: backgroundColor,
-        shape: RoundedRectangleBorder(
+        shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.only(
             topLeft: Radius.circular(8),
             topRight: Radius.circular(28),
@@ -39,7 +39,7 @@ class TitleWidget extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           _buildRotatedBoxWithNumber(),
-          SizedBox(width: 8), // Space between diamond and title text
+          const SizedBox(width: 8), // Space between diamond and title text
           Text(
             titleText,
             style: TextStyle(
