@@ -15,6 +15,7 @@ Thank you for choosing **Aibo** - your ultimate companion in gaming and entertai
 
 ### Demo
 
-[![Sample Video]]((https://www.youtube.com/shorts/fpFKC2bgtl4)https://www.youtube.com/shorts/fpFKC2bgtl4)
+https://www.youtube.com/shorts/fpFKC2bgtl4
+
 
 
