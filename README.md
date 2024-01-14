@@ -13,17 +13,7 @@ Welcome to **Aibo**, an immersive app designed for gaming enthusiasts, VTuber li
 
 Thank you for choosing **Aibo** - your ultimate companion in gaming and entertainment!
 
+### Demo
 
+[![Watch the demo video]()](link_to_video)
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
