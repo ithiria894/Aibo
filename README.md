@@ -1,3 +1,6 @@
+![Alt text](https://github.com/ithiria894/Aibo/blob/main/Screenshot%202024-01-15%20114421.png)
+
+
 # Aibo - Your Gaming Companion App
 
 Welcome to **Aibo**, an immersive app designed for gaming enthusiasts, VTuber live stream followers, and fortune-telling aficionados. Whether you're looking to connect with fellow gamers, enjoy live VTuber performances, or explore the mystical world of fortune-telling, Aibo has something special for you!
