@@ -7,36 +7,77 @@ import 'plate.dart'; // Ensure this custom widget is correctly implemented
 import 'complex_plate.dart'; // Ensure this custom widget is correctly implemented
 import 'carousel_of_plates.dart'; // Ensure this custom widget is correctly implemented
 
+
+//MVVM approach
+
+import 'models/carousel_with_indicator_model.dart';
+import 'view_models/carousel_with_indicator_view_model.dart';
+import 'widgets/carousel_with_indicator.dart' as WidgetCarousel;
+
 void main() {
+  CarouselWithIndicatorModel carouselModel = CarouselWithIndicatorModel(
+    imgList: [
+      'lib/banners/Rectangle 3.png',
+      'lib/banners/Rectangle 4.png',
+      'lib/banners/Rectangle 5.png',
+      'lib/banners/Rectangle 6.png',
+    ],
+  );
+
+  CarouselWithIndicatorViewModel carouselViewModel = CarouselWithIndicatorViewModel(model: carouselModel);
+
+
   runApp(MaterialApp(
     home: Scaffold(
       backgroundColor: Colors.black, // Set background color to black
       appBar: AppBar(
-        title: const Text('Aibo'),
+        title: const Text('AIBO'),
+        //Set the color to  blue\
+        backgroundColor: Colors.blue,
+        //set the text color to white
+        foregroundColor: Colors.white,
+
       ),
       body: SingleChildScrollView(
         // Make the screen scrollable
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            CarouselWithIndicator(
-              imgList: const [
-                'lib/banners/Rectangle 3.png',
-                'lib/banners/Rectangle 4.png',
-                'lib/banners/Rectangle 5.png',
-                'lib/banners/Rectangle 6.png',
-              ],
+            // CarouselWithIndicator(
+            //   imgList: const [
+            //     'lib/banners/Rectangle 3.png',
+            //     'lib/banners/Rectangle 4.png',
+            //     'lib/banners/Rectangle 5.png',
+            //     'lib/banners/Rectangle 6.png',
+            //   ],
+            //   options: CarouselOptions(
+            //     autoPlay: true,
+            //     aspectRatio: 2.0,
+            //     viewportFraction: 1.0,
+            //     enlargeCenterPage: false,
+            //     height: 200,
+            //     autoPlayInterval: const Duration(seconds: 3),
+            //     autoPlayAnimationDuration: const Duration(milliseconds: 400),
+            //   ),
+            //   itemMargin: const EdgeInsets.all(0.0),
+            // ),
+// CarouselWithIndicator using MVVM
+            WidgetCarousel.CarouselWithIndicator(
+              viewModel: carouselViewModel,
               options: CarouselOptions(
                 autoPlay: true,
                 aspectRatio: 2.0,
                 viewportFraction: 1.0,
                 enlargeCenterPage: false,
                 height: 200,
-                autoPlayInterval: const Duration(seconds: 3),
-                autoPlayAnimationDuration: const Duration(milliseconds: 400),
               ),
+              indicatorSize: 12.0,
+              activeIndicatorColor: Colors.blue,
+              inactiveIndicatorColor: Colors.grey,
               itemMargin: const EdgeInsets.all(0.0),
             ),
+
+
             const SizedBox(height: 20),
             const TitleWidget(
               titleText: '熱 門 遊 戲',

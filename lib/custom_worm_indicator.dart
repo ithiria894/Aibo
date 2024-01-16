@@ -10,7 +10,7 @@
 
 import 'package:flutter/material.dart';
 
-class CustomWormIndicator extends StatelessWidget {
+class CustomWormIndicator extends StatelessWidget { //View
   final int dotCount;
   final int currentIndex;
   final double dotSize;
